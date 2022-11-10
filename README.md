@@ -1,4 +1,4 @@
-# Buddy Up Backend
+# BuddyUp Backend
 ## Date: 11/9/22
 
 ### By: Kalen Luciano, Shondriane Mesa-Wise, and Aekangi Patel
