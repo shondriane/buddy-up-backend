@@ -1,5 +1,5 @@
-# buddy-up-backend
-## Date 11/9/22
+# Buddy Up Backend
+## Date: 11/9/22
 
 ### By: Kalen Luciano, Shondriane Mesa-Wise, and Aekangi Patel
 
@@ -17,9 +17,9 @@ The goal of the website is to provide users with knowledge of existing rides and
 ### ***Technologies Used***
 
 * PostgreSQL + Sequelize
-* Express js
+* Express.js
 * React
-* Node js
+* Node.js
 * JavaScript
 
 
@@ -30,9 +30,6 @@ The goal of the website is to provide users with knowledge of existing rides and
 1.  Fork and clone
 2.  npm install
 3.  npm run dev
-4.  cd client
-5.  npm install
-6.  npm start
 
 A trello board used to keep track of development progress can be [viewed here](https://trello.com/b/y27ScqGm/buddy-up).
 
