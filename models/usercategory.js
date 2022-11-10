@@ -13,8 +13,23 @@ module.exports = (sequelize, DataTypes) => {
 	}
 	UserCategory.init(
 		{
-			userId: DataTypes.INTEGER,
+			userId: {
+				type: DataTypes.INTEGER,
+				onDelete: 'CASCADE',
+				references: {
+					model: 'users',
+					key: 'id'
+				}
+			},
 			categoryId: DataTypes.INTEGER
+			// {
+			// 	type: DataTypes.INTEGER,
+			// 	onDelete: 'CASCADE',
+			// 	references: {
+			// 		model: 'categories',
+			// 		key: 'id'
+			// 	}
+			// }
 		},
 		{
 			sequelize,

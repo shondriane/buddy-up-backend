@@ -2,22 +2,17 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
 	async up(queryInterface, Sequelize) {
-		await queryInterface.createTable('user_categories', {
+		await queryInterface.createTable('user_buddy_activities', {
 			id: {
 				allowNull: false,
 				autoIncrement: true,
 				primaryKey: true,
 				type: Sequelize.INTEGER
 			},
-			userId: {
-				type: Sequelize.INTEGER,
-				onDelete: 'CASCADE',
-				references: {
-					model: 'users',
-					key: 'id'
-				}
+			userBuddyId: {
+				type: Sequelize.INTEGER
 			},
-			categoryId: {
+			activityId: {
 				type: Sequelize.INTEGER
 			},
 			createdAt: {
@@ -31,6 +26,6 @@ module.exports = {
 		});
 	},
 	async down(queryInterface, Sequelize) {
-		await queryInterface.dropTable('user_categories');
+		await queryInterface.dropTable('user_buddy_activities');
 	}
 };
