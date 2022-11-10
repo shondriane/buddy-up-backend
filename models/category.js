@@ -13,6 +13,8 @@ module.exports = (sequelize, DataTypes) => {
 				through: models.UserCategory,
 				foreignKey: 'categoryId'
 			});
+
+			Category.hasMany(models.Activity, { foreignKey: 'categoryId' });
 		}
 	}
 	Category.init(

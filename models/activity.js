@@ -10,6 +10,8 @@ module.exports = (sequelize, DataTypes) => {
 		static associate(models) {
 			Activity.belongsTo(models.User, { foreignKey: 'userId' });
 
+			Activity.belongsTo(models.Category, { foreignKey: 'categoryId' });
+
 			Activity.belongsToMany(models.UserBuddy, {
 				as: 'activity_buddies',
 				through: models.UserBuddyActivity,
@@ -19,7 +21,14 @@ module.exports = (sequelize, DataTypes) => {
 	}
 	Activity.init(
 		{
-			categoryId: DataTypes.INTEGER,
+			categoryId: {
+				type: DataTypes.INTEGER,
+				onDelete: 'CASCADE',
+				references: {
+					model: 'categories',
+					key: 'id'
+				}
+			},
 			userId: {
 				type: DataTypes.INTEGER,
 				onDelete: 'CASCADE',
