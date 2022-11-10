@@ -41,7 +41,7 @@ The project itself was deployed and can be [viewed here]().
 
 
 ### ***Photos***
-![entity relationship diagram](./assets/buddy-up-ERD.png)
+![Entity Relationship Diagram](buddy-up-ERD.drawio.png)
 
 ***
 
