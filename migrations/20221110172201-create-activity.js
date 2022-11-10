@@ -26,7 +26,8 @@ module.exports = {
 				}
 			},
 			name: {
-				type: Sequelize.STRING
+				type: Sequelize.STRING,
+				allowNull: false
 			},
 			description: {
 				type: Sequelize.STRING
@@ -44,10 +45,14 @@ module.exports = {
 				type: Sequelize.STRING
 			},
 			zipCode: {
-				type: Sequelize.NUMBER
+				type: Sequelize.INTEGER
 			},
 			country: {
 				type: Sequelize.STRING
+			},
+			date: {
+				type: Sequelize.DATE,
+				allowNull: false
 			},
 			createdAt: {
 				allowNull: false,

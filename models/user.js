@@ -31,13 +31,35 @@ module.exports = (sequelize, DataTypes) => {
 	}
 	User.init(
 		{
-			firstName: DataTypes.STRING,
-			lastName: DataTypes.STRING,
-			username: DataTypes.STRING,
-			password: DataTypes.STRING,
-			email: DataTypes.STRING,
+			firstName: {
+				type: DataTypes.STRING,
+				allowNull: false
+			},
+			lastName: {
+				type: DataTypes.STRING,
+				allowNull: false
+			},
+			username: {
+				type: DataTypes.STRING,
+				allowNull: false
+			},
+			passwordDigest: {
+				type: DataTypes.STRING,
+				allowNull: false
+			},
+			email: {
+				type: DataTypes.STRING,
+				allowNull: false,
+				unique: true,
+				validate: {
+					isEmail: true
+				}
+			},
 			phoneNumber: DataTypes.STRING,
-			age: DataTypes.INTEGER,
+			age: {
+				type: DataTypes.INTEGER,
+				allowNull: false
+			},
 			profilePicture: DataTypes.STRING,
 			about: DataTypes.STRING
 		},

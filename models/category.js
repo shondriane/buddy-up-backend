@@ -8,18 +8,21 @@ module.exports = (sequelize, DataTypes) => {
 		 * The `models/index` file will call this method automatically.
 		 */
 		static associate(models) {
+			Category.hasMany(models.Activity, { foreignKey: 'categoryId' });
+
 			Category.belongsToMany(models.User, {
 				as: 'users_list',
 				through: models.UserCategory,
 				foreignKey: 'categoryId'
 			});
-
-			Category.hasMany(models.Activity, { foreignKey: 'categoryId' });
 		}
 	}
 	Category.init(
 		{
-			name: DataTypes.STRING
+			name: {
+				type: DataTypes.STRING,
+				allowNull: false
+			}
 		},
 		{
 			sequelize,

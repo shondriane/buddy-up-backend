@@ -37,14 +37,21 @@ module.exports = (sequelize, DataTypes) => {
 					key: 'id'
 				}
 			},
-			name: DataTypes.STRING,
+			name: {
+				type: DataTypes.STRING,
+				allowNull: false
+			},
 			description: DataTypes.STRING,
 			streetAddress: DataTypes.STRING,
 			streetAddress2: DataTypes.STRING,
 			city: DataTypes.STRING,
 			state: DataTypes.STRING,
-			zipCode: DataTypes.NUMBER,
-			country: DataTypes.STRING
+			zipCode: DataTypes.INTEGER,
+			country: DataTypes.STRING,
+			date: {
+				type: DataTypes.DATE,
+				allowNull: false
+			}
 		},
 		{
 			sequelize,
