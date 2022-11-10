@@ -11,7 +11,7 @@
 ***
 
 ### ***Description***
-The goal of the website is to provide users with knowledge of existing rides and read/write reviews by other amusement park guests.
+BuddyUp allows you to select an activity and match with a buddy of your choice. 
 ***
 
 ### ***Technologies Used***
