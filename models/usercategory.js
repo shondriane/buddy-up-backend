@@ -21,15 +21,14 @@ module.exports = (sequelize, DataTypes) => {
 					key: 'id'
 				}
 			},
-			categoryId: DataTypes.INTEGER
-			// {
-			// 	type: DataTypes.INTEGER,
-			// 	onDelete: 'CASCADE',
-			// 	references: {
-			// 		model: 'categories',
-			// 		key: 'id'
-			// 	}
-			// }
+			categoryId: {
+				type: DataTypes.INTEGER,
+				onDelete: 'CASCADE',
+				references: {
+					model: 'categories',
+					key: 'id'
+				}
+			}
 		},
 		{
 			sequelize,
