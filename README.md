@@ -18,6 +18,19 @@ BuddyUp allows you to select an activity and match with a buddy of your choice.
 
 ---
 
+### **_Getting Started_**
+
+1. `Fork` and `clone`
+2. `cd` into the directory
+3. Run `npm run setup`
+4. Run `npm run dev`
+
+A trello board used to keep track of development progress can be [viewed here](https://trello.com/b/y27ScqGm/buddy-up).
+
+The project itself was deployed and can be [viewed here]().
+
+---
+
 ### **_Technologies Used_**
 
 -   PostgreSQL + Sequelize
@@ -28,22 +41,6 @@ BuddyUp allows you to select an activity and match with a buddy of your choice.
 
 **_Entity Hierarchy Diagram:_**
 ![Entity Relationship Diagram](./assets/buddy-up-ERD.drawio.png)
-
----
-
-### **_Getting Started_**
-
-1. `Fork` and `clone`
-2. `cd` into the directory
-3. Run `npm install`
-4. Run `sequelize db:create`
-5. Run `sequelize db:migrate`
-6. Run `sequelize db:seed:all`
-7. Run `npm run dev`
-
-A trello board used to keep track of development progress can be [viewed here](https://trello.com/b/y27ScqGm/buddy-up).
-
-The project itself was deployed and can be [viewed here]().
 
 ---
 
