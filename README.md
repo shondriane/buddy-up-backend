@@ -1,44 +1,54 @@
 # BuddyUp Backend
+
 ## Date: 11/9/22
 
 ### By: Kalen Luciano, Shondriane Mesa-Wise, and Aekangi Patel
 
 ### Kalen Luciano: [Github](https://github.com/kalenluciano) | [Linkedin](https://www.linkedin.com/in/kalenluciano/)
+
 ### Aekangi Patel: [Github](https://github.com/Aekangi) | [Linkedin](https://www.linkedin.com/in/aekangipatel/)
+
 ### Shondriane Mesa-Wise: [Github](https://github.com/shondriane) | [LinkedIn](https://www.linkedin.com/in/shondriane-mesa-wise/)
 
+---
 
-***
+### **_Description_**
 
-### ***Description***
-BuddyUp allows you to select an activity and match with a buddy of your choice. 
-***
+BuddyUp allows you to select an activity and match with a buddy of your choice.
 
-### ***Technologies Used***
+---
 
-* PostgreSQL + Sequelize
-* Express.js
-* React
-* Node.js
-* JavaScript
+### **_Technologies Used_**
+
+-   PostgreSQL + Sequelize
+-   Express.js
+-   React
+-   Node.js
+-   JavaScript
 
 **_Entity Hierarchy Diagram:_**
 ![Entity Relationship Diagram](./assets/buddy-up-ERD.drawio.png)
 
-***
+---
 
-### ***Getting Started***
-1.  Fork and clone
-2.  npm install
-3.  npm run dev
+### **_Getting Started_**
+
+1. `Fork` and `clone`
+2. `cd` into the directory
+3. Run `npm install`
+4. Run `sequelize db:create`
+5. Run `sequelize db:migrate`
+6. Run `sequelize db:seed:all`
+7. Run `npm run dev`
 
 A trello board used to keep track of development progress can be [viewed here](https://trello.com/b/y27ScqGm/buddy-up).
 
 The project itself was deployed and can be [viewed here]().
 
-***
+---
 
-### ***Screenshots***
+### **_Screenshots_**
 
-***
-### ***Credits***
+---
+
+### **_Credits_**
