@@ -22,7 +22,8 @@ BuddyUp allows you to select an activity and match with a buddy of your choice.
 * Node.js
 * JavaScript
 
-
+**_Entity Hierarchy Diagram:_**
+![Entity Relationship Diagram](./assets/buddy-up-ERD.drawio.png)
 
 ***
 
@@ -35,14 +36,9 @@ A trello board used to keep track of development progress can be [viewed here](h
 
 The project itself was deployed and can be [viewed here]().
 
-
-
-### ***Photos***
-![Entity Relationship Diagram](./assets/buddy-up-ERD.drawio.png)
-
 ***
 
+### ***Screenshots***
+
+***
 ### ***Credits***
-**TBD**
-
-
