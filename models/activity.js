@@ -8,6 +8,8 @@ module.exports = (sequelize, DataTypes) => {
 		 * The `models/index` file will call this method automatically.
 		 */
 		static associate(models) {
+			Activity.belongsTo(models.User, { foreignKey: 'userId' });
+
 			Activity.belongsToMany(models.UserBuddy, {
 				as: 'activity_buddies',
 				through: models.UserBuddyActivity,
@@ -18,7 +20,14 @@ module.exports = (sequelize, DataTypes) => {
 	Activity.init(
 		{
 			categoryId: DataTypes.INTEGER,
-			userId: DataTypes.INTEGER,
+			userId: {
+				type: DataTypes.INTEGER,
+				onDelete: 'CASCADE',
+				references: {
+					model: 'users',
+					key: 'id'
+				}
+			},
 			name: DataTypes.STRING,
 			description: DataTypes.STRING,
 			streetAddress: DataTypes.STRING,
