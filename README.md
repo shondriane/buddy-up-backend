@@ -3,8 +3,8 @@
 
 ### By: Kalen Luciano, Shondriane Mesa-Wise, and Aekangi Patel
 
-### Kalen Luciano: [Github] (https://github.com/kalenluciano) | [Linkedin] (https://www.linkedin.com/in/kalenluciano/)
-### Aekangi Patel: [Github] (https://github.com/Aekangi) | [Linkedin] (https://www.linkedin.com/in/aekangipatel/)
+### Kalen Luciano: [Github](https://github.com/kalenluciano) | [Linkedin](https://www.linkedin.com/in/kalenluciano/)
+### Aekangi Patel: [Github](https://github.com/Aekangi) | [Linkedin](https://www.linkedin.com/in/aekangipatel/)
 ### Shondriane Mesa-Wise: [Github](https://github.com/shondriane)|[LinkedIn](https://www.linkedin.com/in/shondriane-mesa-wise/
 
 
