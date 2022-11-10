@@ -13,8 +13,22 @@ module.exports = (sequelize, DataTypes) => {
 	}
 	UserBuddyActivity.init(
 		{
-			userBuddyId: DataTypes.INTEGER,
-			activityId: DataTypes.INTEGER
+			userBuddyId: {
+				type: DataTypes.INTEGER,
+				onDelete: 'CASCADE',
+				references: {
+					model: 'user_buddies',
+					key: 'id'
+				}
+			},
+			activityId: {
+				type: DataTypes.INTEGER,
+				onDelete: 'CASCADE',
+				references: {
+					model: 'activities',
+					key: 'id'
+				}
+			}
 		},
 		{
 			sequelize,
