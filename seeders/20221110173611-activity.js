@@ -8,7 +8,8 @@ module.exports = {
 		const users = await User.findAll({ raw: true });
 		const categories = await Category.findAll({ raw: true });
 		const activities = [...Array(100)].map((a) => ({
-			categoryId: categories[Math.floor(Math.random() * users.length)].id,
+			categoryId:
+				categories[Math.floor(Math.random() * categories.length)].id,
 			userId: users[Math.floor(Math.random() * users.length)].id,
 			name: falso.randDrinks(),
 			description: falso.randText(),
