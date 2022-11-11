@@ -19,6 +19,17 @@ const GetUserById = async (req, res) => {
 	}
 };
 
+const GetUserAndActivity = async ()=>{
+    try {
+        const data = await User.findAll({
+          include:[{model: Activity, as:'created'}]
+        })
+        stringify(data)
+      } catch (error) {
+        console.log(error)
+      }
+}
+
 const CreateUser = async (req, res) => {
 	try {
 		const user = await User.create(req.body);
@@ -54,6 +65,7 @@ const DeleteUserById = async (req, res) => {
 module.exports = {
 	GetAllUsers,
 	GetUserById,
+    GetUserAndActivity,
 	CreateUser,
 	UpdateUserById,
 	DeleteUserById
