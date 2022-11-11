@@ -20,6 +20,18 @@ const GetActivityById = async (req,res)=>{
     }
 }
 
+const GetActivityByUserId = async (req,res)=>{
+    try{
+        const userId= parseInt(req.params.user_id);
+        const activity = await Activity.findByPk(userId)
+        res.send(activity)
+    } catch (error){
+        throw error;
+    }
+}
+
+
+
 const CreateActivity = async (req,res)=>{
     try{
         const activity = await Activity.create(req.body)
@@ -56,6 +68,8 @@ const DeleteActivityById = async (req,res)=>{
 module.exports={
     GetAllActivities,
     GetActivityById,
+    GetActivityByUserId,
+   
     CreateActivity,
     UpdateActivityById,
     DeleteActivityById
