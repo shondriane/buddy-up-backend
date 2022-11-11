@@ -18,7 +18,20 @@ module.exports = (sequelize, DataTypes) => {
 				through: models.UserBuddyActivity,
 				foreignKey: 'activityId'
 			});
+
+			Activity.belongsToMany(models.User, {
+				as: 'users_list',
+				through: models.UserCategory,
+				foreignKey: 'categoryId'
+			});
+			Activity.belongsToMany(models.User, {
+				as: 'activity_listed',
+				through: models.UserActivity,
+				foreignKey: 'activityId'
+			});
 		}
+		
+		
 	}
 	Activity.init(
 		{

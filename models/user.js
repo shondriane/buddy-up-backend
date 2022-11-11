@@ -28,6 +28,13 @@ module.exports = (sequelize, DataTypes) => {
 				through: models.UserBuddy,
 				foreignKey: 'buddyId'
 			});
+			User.belongsToMany(models.User, {
+				as: 'activities_list',
+				through: models.UserActivity,
+				foreignKey: 'userId'
+			});
+
+
 		}
 	}
 	User.init(
