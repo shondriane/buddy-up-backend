@@ -9,12 +9,12 @@ const UserCategoryRouter = require('./UserCategoryRouter');
 const AuthRouter = require('./AuthRouter');
 
 Router.use('/users', UserRouter);
-Router.use('/activities', ActivityRouter);
-Router.use('/categories', CategoryRouter);
-Router.use('/posts', PostRouter);
-Router.use('/user-buddy-activities', UserBuddyActivityRouter);
-Router.use('/user-buddies', UserBuddyRouter);
-Router.use('/user-categories', UserCategoryRouter);
-Router.use('/auth', AuthRouter);
+// Router.use('/activities', ActivityRouter);
+// Router.use('/categories', CategoryRouter);
+// Router.use('/posts', PostRouter);
+// Router.use('/user-buddy-activities', UserBuddyActivityRouter);
+// Router.use('/user-buddies', UserBuddyRouter);
+// Router.use('/user-categories', UserCategoryRouter);
+// Router.use('/auth', AuthRouter);
 
 module.exports = Router;
