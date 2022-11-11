@@ -1,11 +1,18 @@
 'use strict';
 const falso = require('@ngneat/falso');
-const { UserBuddy, Activity } = require('../models');
+const { db, UserBuddy, Activity } = require('../models');
+const { QueryTypes } = require('sequelize');
 
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
 	up: async (queryInterface, Sequelize) => {
-		const userBuddies = await UserBuddy.findAll({ raw: true });
+		// const sequelize = new Sequelize('buddy_up_development', {
+		// 	host: 'localhost',
+		// 	dialect: 'postgres'
+		// });
+		const userBuddies = await queryInterface.sequelize.query(
+			'SELECT id FROM user_buddies'
+		);
 		const activities = await Activity.findAll({ raw: true });
 		const userBuddyActivitiesList = userBuddies.map((userBuddy) => ({
 			userBuddyId: userBuddy.id,
