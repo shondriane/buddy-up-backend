@@ -7,8 +7,8 @@ module.exports = {
 	up: async (queryInterface, Sequelize) => {
 		const userBuddies = await UserBuddy.findAll({ raw: true });
 		const activities = await Activity.findAll({ raw: true });
-		const userBuddyActivitiesList = userBuddies.map((uB) => ({
-			userBuddyId: uB.id,
+		const userBuddyActivitiesList = userBuddies.map((userBuddy) => ({
+			userBuddyId: userBuddy.id,
 			activityId:
 				activities[Math.floor(Math.random() * activities.length)].id,
 			createdAt: falso.randPastDate(),
