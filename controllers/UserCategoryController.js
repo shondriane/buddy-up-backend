@@ -23,7 +23,7 @@ const GetUserCategoriesByUserId = async (req,res)=>{
 const GetUserCategoriesByCategoryId = async(req,res)=>{
     try{
         const categoryId= parseInt(req.params.category_id);
-        const userCategory= await UserCategory.findByPk(categoryId)
+        const userCategory= await UserCategory.findAll({where:{categoryId:categoryId}})
         res.send(userCategory)
     }
     catch (error){
