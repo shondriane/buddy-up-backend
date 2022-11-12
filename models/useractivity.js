@@ -1,7 +1,5 @@
-'use strict';
-const {
-  Model
-} = require('sequelize');
+'use strict'
+const { Model } = require('sequelize')
 module.exports = (sequelize, DataTypes) => {
   class UserActivity extends Model {
     /**
@@ -13,27 +11,30 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
     }
   }
-  UserActivity.init({
-    userId: {
-      type: DataTypes.INTEGER,
-      onDelete: 'CASCADE',
-				references: {
-					model: 'users',
-					key: 'id'
-				}
-    },
-    activityId:{
-      type:DataTypes.INTEGER,
-      onDelete: 'CASCADE',
-      references: {
-        model: 'users',
-        key: 'id'
+  UserActivity.init(
+    {
+      userCreatedId: {
+        type: DataTypes.INTEGER,
+        onDelete: 'CASCADE',
+        references: {
+          model: 'users',
+          key: 'id'
+        }
+      },
+      activityListedId: {
+        type: DataTypes.INTEGER,
+        onDelete: 'CASCADE',
+        references: {
+          model: 'activity',
+          key: 'id'
+        }
       }
-    } 
-  }, {
-    sequelize,
-    modelName: 'User_Activities',
-    tableName: 'user_activities'
-  });
-  return UserActivity;
-};
+    },
+    {
+      sequelize,
+      modelName: 'UserActivity',
+      tableName: 'user_activities'
+    }
+  )
+  return UserActivity
+}
