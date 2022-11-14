@@ -1,5 +1,4 @@
 const { User } = require('../models')
-const userActivity = require('../models/userActivity')
 
 const GetAllUsers = async (req, res) => {
   try {
