@@ -55,7 +55,7 @@ const DeleteActivityById = async (req, res) => {
 	try {
 		const activityId = parseInt(req.params.activity_id);
 		await Activity.destroy({ where: { id: activityId } });
-		res.send({ message: `Deleted category with an id of ${activityId}` });
+		res.send({ message: `Deleted activity with an id of ${activityId}` });
 	} catch (error) {
 		throw error;
 	}
