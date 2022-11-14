@@ -17,6 +17,6 @@ Router.use('/user-buddy-activities', UserBuddyActivityRouter)
 Router.use('/user-buddies', UserBuddyRouter)
 Router.use('/user-categories', UserCategoryRouter)
 Router.use('/user-activities', UserActivityRouter)
-// Router.use('/auth', AuthRouter);
+Router.use('/auth', AuthRouter);
 
 module.exports = Router
