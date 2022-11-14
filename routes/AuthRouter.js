@@ -7,8 +7,12 @@ Router.post('/login', controller.Login);
 Router.put(
 	'/update',
 	middleware.stripToken,
-	middleware.verifyToken
-	//  controller.UpdatePassword
-);
+	middleware.verifyToken,
+	controller.UpdatePassword,
+    
+)
+Router.get('/session',middleware.stripToken,
+middleware.verifyToken,
+controller.CheckSession)
 
 module.exports = Router;
