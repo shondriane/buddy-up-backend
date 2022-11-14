@@ -25,6 +25,7 @@ module.exports = (sequelize, DataTypes) => {
 				through: models.UserCategory,
 				foreignKey: 'categoryId'
 			});
+
 			Activity.belongsToMany(models.User, {
 				as: 'activities_user_list',
 				through: models.UserActivity,
