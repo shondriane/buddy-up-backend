@@ -34,10 +34,7 @@ const Register = async (req, res) => {
 		const { email, password, firstName, lastName, username, age } =
 			req.body;
 		let ageNumber = parseInt(age);
-		console.log(ageNumber)
-		console.log(req.body)
 		let passwordDigest = await middleware.hashPassword(password);
-		console.log(passwordDigest)
 		const user = await User.create({
 			email,
 			passwordDigest,
