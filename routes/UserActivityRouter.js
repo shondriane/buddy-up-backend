@@ -13,7 +13,7 @@ Router.get(
 	controller.GetAllUsersAndActivitiesByActivityId
 );
 Router.post(
-	'/user/:user_created_id/activity/:activity_id',
+	'/user/:user_created_id/activity/:activity_listed_id',
 	controller.CreateUserActivity
 );
 Router.put('/:user_activity_id', controller.UpdateUserActivityById);
