@@ -19,7 +19,7 @@ const GetActivityById = async (req, res) => {
 	}
 };
 
-const GetActivityByCategoryId = async (req, res) => {
+const GetActivitiesByCategoryId = async (req, res) => {
 	try {
 		const categoryId = parseInt(req.params.category_id);
 		const activities = await Activity.findAll({
@@ -77,7 +77,7 @@ module.exports = {
 	GetAllActivities,
 	GetActivityById,
 	GetActivityByUserId,
-	GetActivityByCategoryId,
+	GetActivitiesByCategoryId,
 	CreateActivity,
 	UpdateActivityById,
 	DeleteActivityById

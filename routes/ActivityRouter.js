@@ -3,7 +3,7 @@ const controller = require('../controllers/ActivityController');
 const middleware = require('../middleware');
 
 Router.get('/', controller.GetAllActivities);
-Router.get('/category/:category_id', controller.GetActivityByCategoryId);
+Router.get('/category/:category_id', controller.GetActivitiesByCategoryId);
 Router.get('/user/:user_id', controller.GetActivityByUserId);
 Router.get('/:activity_id', controller.GetActivityById);
 Router.post(
