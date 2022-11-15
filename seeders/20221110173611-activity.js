@@ -19,6 +19,7 @@ module.exports = {
 			zipCode: parseInt(falso.randZipCode()),
 			country: falso.randCountry(),
 			date: falso.randFutureDate(),
+			image: falso.randImg(),
 			createdAt: falso.randPastDate(),
 			updatedAt: falso.randRecentDate()
 		}));
