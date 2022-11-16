@@ -20,6 +20,12 @@ module.exports = (sequelize, DataTypes) => {
 				foreignKey: 'activityId'
 			});
 
+			Activity.belongsToMany(models.UserRejectedBuddy, {
+				as: 'rejected_activity_buddies',
+				through: models.UserRejectedBuddyActivity,
+				foreignKey: 'activityId'
+			});
+
 			Activity.belongsToMany(models.User, {
 				as: 'users_list',
 				through: models.UserCategory,
@@ -31,6 +37,8 @@ module.exports = (sequelize, DataTypes) => {
 				through: models.UserActivity,
 				foreignKey: 'activityListedId'
 			});
+
+			Activity.belongsToMany(models.User, {});
 		}
 	}
 	Activity.init(
