@@ -1,6 +1,7 @@
 const Router = require('express').Router();
 const controller = require('../controllers/UserActivityController');
 
+Router.get('/pk', controller.GetAllUserActivitiesWithPk);
 Router.get('/', controller.GetAllUserActivities);
 Router.get('/all', controller.GetAllUsersAndActivities);
 Router.get('/:user_activity_id', controller.GetAllUsersAndActivitiesById);

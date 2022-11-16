@@ -1,13 +1,27 @@
-const { Activity, User, UserActivity } = require('../models');
 
-const GetAllUserActivities = async (req, res) => {
+const { Activity, User, UserActivity } = require('../models');
+const db = require ('../models/index.js')
+const GetAllUserActivitiesWithPk = async (req, res) => {
 	try {
-		const userActivities = await UserActivity.findAll();
+		const userActivities = await db.sequelize.query('SELECT * FROM user_activities',{
+			type:db.sequelize.QueryTypes.SELECT
+		})
+		
 		res.send(userActivities);
 	} catch (error) {
 		throw error;
 	}
 };
+
+const GetAllUserActivities= async (req,res)=>{
+	try{
+		const userActivities = await UserActivity.findAll();
+		res.send(userActivities)
+	}
+	catch (error){
+throw error;
+	}
+}
 
 const GetAllUsersAndActivities = async (req, res) => {
 	try {
@@ -117,6 +131,7 @@ const DeleteUserActivityById = async (req, res) => {
 };
 
 module.exports = {
+	GetAllUserActivitiesWithPk,
 	GetAllUserActivities,
 	GetAllUsersAndActivities,
 	GetAllUsersAndActivitiesById,
