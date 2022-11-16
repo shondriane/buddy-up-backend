@@ -35,6 +35,18 @@ module.exports = (sequelize, DataTypes) => {
 				through: models.UserBuddy,
 				foreignKey: 'buddyId'
 			});
+
+			User.belongsToMany(models.User, {
+				as: 'not_buddies_following',
+				through: models.UserRejectedBuddy,
+				foreignKey: 'userId'
+			});
+
+			User.belongsToMany(models.User, {
+				as: 'not_buddies_followers',
+				through: models.UserRejectedBuddy,
+				foreignKey: 'rejectedBuddyId'
+			});
 		}
 	}
 	User.init(
