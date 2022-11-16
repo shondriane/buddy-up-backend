@@ -120,7 +120,7 @@ const DeleteUserRejectedBuddyById = async (req, res) => {
 		const userRejectedBuddyId = parseInt(req.params.user_rejected_buddy_id);
 		await UserRejectedBuddy.destroy({ where: { id: userRejectedBuddyId } });
 		res.send({
-			message: `Deleted user with an id of ${userRejectedBuddyId}`
+			message: `Deleted userRejectedBuddy with an id of ${userRejectedBuddyId}`
 		});
 	} catch (error) {
 		throw error;
