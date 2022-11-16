@@ -8,7 +8,7 @@ Router.get(
 );
 Router.get(
 	'/user-rejected-buddy/:user_rejected_buddy_id',
-	controller.GetUserRejectedBuddyActivitiesByUserBuddyId
+	controller.GetUserRejectedBuddyActivitiesByUserRejectedBuddyId
 );
 Router.get(
 	'/activity/:activity_id',
