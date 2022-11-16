@@ -68,8 +68,8 @@ module.exports = (sequelize, DataTypes) => {
 				type: DataTypes.INTEGER,
 				allowNull: false
 			},
-			profilePicture: DataTypes.STRING,
-			about: DataTypes.STRING
+			profilePicture: DataTypes.TEXT,
+			about: DataTypes.TEXT
 		},
 		{
 			sequelize,

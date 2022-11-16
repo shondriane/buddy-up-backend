@@ -55,7 +55,7 @@ module.exports = (sequelize, DataTypes) => {
 				type: DataTypes.STRING,
 				allowNull: false
 			},
-			description: DataTypes.STRING,
+			description: DataTypes.TEXT,
 			streetAddress: DataTypes.STRING,
 			streetAddress2: DataTypes.STRING,
 			city: DataTypes.STRING,
@@ -67,7 +67,7 @@ module.exports = (sequelize, DataTypes) => {
 				allowNull: false
 			},
 			image: {
-				type: DataTypes.STRING
+				type: DataTypes.TEXT
 			}
 		},
 		{
