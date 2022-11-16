@@ -1,16 +1,25 @@
 'use strict'
-
-const { BulkRecordError } = require('sequelize')
+const bcrypt = require('bcrypt')
+const { hashPassword } = require('../middleware/index')
+require('dotenv').config()
+const SALT_ROUNDS = parseInt(process.env.SALT_ROUNDS)
 
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
+    const generateFakePassword = async () => {
+      const fakePassword = await hashPassword('hello')
+      console.log(fakePassword)
+      return fakePassword
+    }
+
+    const fakePassword = await hashPassword('hello')
     const userList = [
       {
         firstName: 'James',
         lastName: 'Smith',
         username: 'CoolSmith',
-        passwordDigest: 'hello',
+        passwordDigest: fakePassword,
         email: 'james@smith.com',
         phoneNumber: '(145) 234- 2385',
         age: 32,
@@ -25,7 +34,7 @@ module.exports = {
         firstName: 'Michael',
         lastName: 'Johnson',
         username: 'johnnyboy',
-        passwordDigest: 'imhere',
+        passwordDigest: fakePassword,
         email: 'michael@johnson.com',
         phoneNumber: '(347) 126- 7623',
         age: 24,
@@ -40,7 +49,7 @@ module.exports = {
         firstName: 'Terry',
         lastName: 'Carter',
         username: 'terrorcarter',
-        passwordDigest: 'scary',
+        passwordDigest: fakePassword,
         email: 'terry@carter.com',
         phoneNumber: '(239) 521-1609',
         age: 34,
@@ -54,7 +63,7 @@ module.exports = {
         firstName: 'Ava',
         lastName: 'Linden',
         username: 'ava91',
-        passwordDigest: 'coolgirl',
+        passwordDigest: fakePassword,
         email: 'ava@linden.com',
         phoneNumber: '(516) 783-3298',
         age: 31,
@@ -69,7 +78,7 @@ module.exports = {
         firstName: 'John',
         lastName: 'Smith',
         username: 'smithyjohn92',
-        passwordDigest: '',
+        passwordDigest: fakePassword,
         email: 'john@smith.com',
         phoneNumber: '(278) 746-1289',
         age: 30,
@@ -84,7 +93,7 @@ module.exports = {
         firstName: 'Franko',
         lastName: 'Thomas',
         username: 'frankoboy',
-        passwordDigest: 'frankie',
+        passwordDigest: fakePassword,
         email: 'franko@thomas.com',
         phoneNumber: '(569) 235-7677',
         age: 38,
@@ -99,7 +108,7 @@ module.exports = {
         firstName: 'Angela',
         lastName: 'Suarez',
         username: 'angelasuarez',
-        passwordDigest: '1234',
+        passwordDigest: fakePassword,
         email: 'angela@suarez.com',
         phoneNumber: '(609) 129-5683',
         age: 64,
@@ -114,7 +123,7 @@ module.exports = {
         firstName: 'Jamie',
         lastName: 'Abrahim',
         username: 'bigpimpin996',
-        passwordDigest: 'imsocool',
+        passwordDigest: fakePassword,
         email: 'jamie@abrahim.com',
         phoneNumber: '(348) 532-1934',
         age: 23,
@@ -129,7 +138,7 @@ module.exports = {
         firstName: 'Ibrahim',
         lastName: 'Ibanez',
         username: 'jesusBoy',
-        passwordDigest: 'iprayalot',
+        passwordDigest: fakePassword,
         email: 'ibrahim@ibanez.com',
         phoneNumber: '(182) 539-2389',
         age: 40,
@@ -144,7 +153,7 @@ module.exports = {
         firstName: 'Jessica',
         lastName: 'Gitzbuerg',
         username: 'gatzby',
-        passwordDigest: 'reader',
+        passwordDigest: fakePassword,
         email: 'jessica@gitzbuerg.com',
         phoneNumber: '(126) 450-1976',
         age: 19,
@@ -159,7 +168,7 @@ module.exports = {
         firstName: 'Ginger',
         lastName: 'Lang',
         username: 'gingerHead',
-        passwordDigest: 'imred',
+        passwordDigest: fakePassword,
         email: 'ginger@lang.com',
         phoneNumber: '(386) 497-1865',
         age: 20,
@@ -173,7 +182,7 @@ module.exports = {
         firstName: 'Joe',
         lastName: 'Fernandez',
         username: 'joejoeboy',
-        passwordDigest: 'imsojoe',
+        passwordDigest: fakePassword,
         email: 'joe@fernandez.com',
         phoneNumber: '(528) 885-1927',
         age: 37,
@@ -188,7 +197,7 @@ module.exports = {
         firstName: 'Lauren',
         lastName: 'Ford',
         username: 'laurenF88',
-        passwordDigest: 'imhere',
+        passwordDigest: fakePassword,
         email: 'lauren@ford.com',
         phoneNumber: '(204) 297-8740',
         age: 34,
@@ -203,7 +212,7 @@ module.exports = {
         firstName: 'Linnea',
         lastName: 'Nelson',
         username: 'nellylin2',
-        passwordDigest: 'hello',
+        passwordDigest: fakePassword,
         email: 'linnea@nelson.com',
         phoneNumber: '(298) 258-9838',
         age: 58,
@@ -218,7 +227,7 @@ module.exports = {
         firstName: 'Lea',
         lastName: 'Jacob',
         username: 'caligirl91',
-        passwordDigest: 'ilovecali',
+        passwordDigest: fakePassword,
         email: 'lea@jacob.com',
         phoneNumber: '(938) 997-1299',
         age: 30,
@@ -233,7 +242,7 @@ module.exports = {
         firstName: 'Manny',
         lastName: 'libez',
         username: 'mannythebarber',
-        passwordDigest: '1234',
+        passwordDigest: fakePassword,
         email: 'manny@libez.com',
         phoneNumber: '(718) 238-9132',
         age: 59,
@@ -248,7 +257,7 @@ module.exports = {
         firstName: 'Victoria',
         lastName: 'Thompson',
         username: 'vickygal04',
-        passwordDigest: 'imsocool',
+        passwordDigest: fakePassword,
         email: 'victorial@thompson.com',
         phoneNumber: '(823) 921-9032',
         age: 18,
@@ -263,7 +272,7 @@ module.exports = {
         firstName: 'Nicole',
         lastName: 'Thompson',
         username: 'nickythom',
-        passwordDigest: 'imnicole',
+        passwordDigest: fakePassword,
         email: 'nicole@thompson.com',
         phoneNumber: '(923) 892-7723',
         age: 46,
@@ -278,7 +287,7 @@ module.exports = {
         firstName: 'Lindsay',
         lastName: 'John',
         username: 'lindsay94',
-        passwordDigest: 'lindsay',
+        passwordDigest: fakePassword,
         email: 'lindsay@john.com',
         phoneNumber: '(237) 742-8912',
         age: 28,
@@ -293,7 +302,7 @@ module.exports = {
         firstName: 'Phil',
         lastName: 'Thomas',
         username: 'philT',
-        passwordDigest: 'phil',
+        passwordDigest: fakePassword,
         email: 'phil@thomas.com',
         phoneNumber: '(478) 487-4389',
         age: 57,
@@ -308,7 +317,7 @@ module.exports = {
         firstName: 'Robert',
         lastName: 'Smith',
         username: 'robertS',
-        passwordDigest: '1234',
+        passwordDigest: fakePassword,
         email: 'robert@smith.com',
         phoneNumber: '(244) 434-8932',
         age: 66,
@@ -323,7 +332,7 @@ module.exports = {
         firstName: 'Mario',
         lastName: 'Garcia',
         username: 'marioG',
-        passwordDigest: 'imhere',
+        passwordDigest: fakePassword,
         email: 'mario@garcia.com',
         phoneNumber: '(323) 545-3767',
         age: 52,
@@ -338,7 +347,7 @@ module.exports = {
         firstName: 'James',
         lastName: 'Johnson',
         username: 'jayjay',
-        passwordDigest: 'johnson',
+        passwordDigest: fakePassword,
         email: 'james@johnson.com',
         phoneNumber: '(789) 293-0384',
         age: 46,
@@ -353,7 +362,7 @@ module.exports = {
         firstName: 'Alex',
         lastName: 'Chang',
         username: 'alexC',
-        passwordDigest: 'hello',
+        passwordDigest: fakePassword,
         email: 'alex@chang.com',
         phoneNumber: '(678)383-9123',
         age: 33,
@@ -368,7 +377,7 @@ module.exports = {
         firstName: 'James',
         lastName: 'Ford',
         username: 'fordJ',
-        passwordDigest: 'ford',
+        passwordDigest: fakePassword,
         email: 'james@ford.com',
         phoneNumber: '(428) 438-4378',
         age: 29,
@@ -383,7 +392,7 @@ module.exports = {
         firstName: 'Nick',
         lastName: 'Hayes',
         username: 'nickH',
-        passwordDigest: 'hayes',
+        passwordDigest: fakePassword,
         email: 'nick@hayes.com',
         phoneNumber: '(478) 912-4839',
         age: 19,
@@ -398,6 +407,6 @@ module.exports = {
     await queryInterface.bulkInsert('users', userList)
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.bulkDelete('users')
+    await queryInterface.bulkDelete('users', null, {})
   }
 }
