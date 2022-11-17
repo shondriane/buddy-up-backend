@@ -27,9 +27,9 @@ const GetAllUserRejectedBuddyActivitiesById = async (req, res) => {
 			req.params.user_rejected_buddy_activity_id
 		);
 		const userRejectedBuddyActivity =
-			await UserRejectedBuddyActivity.findByPk(
-				userRejectedBuddyActivityId
-			);
+			await UserRejectedBuddyActivity.findAll({
+				where: { id: userRejectedBuddyActivityId }
+			});
 		res.send(userRejectedBuddyActivity);
 	} catch (error) {
 		throw error;
