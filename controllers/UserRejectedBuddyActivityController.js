@@ -10,7 +10,7 @@ const GetAllUserRejectedBuddyActivities = async (req, res) => {
 			include: [
 				{
 					model: Activity,
-					as: 'rejected_buddy_activities',
+					as: 'rejected_activity_buddies',
 					through: { attributes: [] }
 				}
 			]
@@ -66,7 +66,7 @@ const GetUserRejectedBuddyActivitiesByActivityId = async (req, res) => {
 			where: { id: activityId },
 			include: [
 				{
-					model: UserBuddy,
+					model: UserRejectedBuddy,
 					as: 'rejected_buddy_activities',
 					through: { attributes: [] }
 				}
