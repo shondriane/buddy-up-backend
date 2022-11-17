@@ -84,6 +84,8 @@ const GetUserRejectedBuddiesByBuddyId = async (req, res) => {
 	}
 };
 
+
+
 const CreateUserRejectedBuddy = async (req, res) => {
 	try {
 		const userId = parseInt(req.params.user_id);
