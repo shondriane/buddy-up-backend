@@ -14,6 +14,7 @@ Router.get(
 	'/activity/:activity_id',
 	controller.GetUserRejectedBuddyActivitiesByActivityId
 );
+Router.get('/raw/activity/:activity_id', controller.GetRawUserRejectedBuddyActivitiesByActivityId)
 Router.post(
 	'/user-rejected-buddy/:user_rejected_buddy_id/activity/:activity_id',
 	controller.CreateUserRejectedBuddyActivity
