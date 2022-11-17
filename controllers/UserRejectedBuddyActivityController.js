@@ -27,9 +27,9 @@ const GetAllUserRejectedBuddyActivitiesById = async (req, res) => {
 			req.params.user_rejected_buddy_activity_id
 		);
 		const userRejectedBuddyActivity =
-			await UserRejectedBuddyActivity.findByPk(
-				userRejectedBuddyActivityId
-			);
+			await UserRejectedBuddyActivity.findAll({
+				where: { id: userRejectedBuddyActivityId }
+			});
 		res.send(userRejectedBuddyActivity);
 	} catch (error) {
 		throw error;
@@ -66,8 +66,8 @@ const GetUserRejectedBuddyActivitiesByActivityId = async (req, res) => {
 			where: { id: activityId },
 			include: [
 				{
-					model: UserBuddy,
-					as: 'rejected_buddy_activities',
+					model: UserRejectedBuddy,
+					as: 'rejected_activity_buddies',
 					through: { attributes: [] }
 				}
 			]
@@ -85,7 +85,7 @@ const CreateUserRejectedBuddyActivity = async (req, res) => {
 		const userBuddyActivity = await UserRejectedBuddyActivity.create({
 			userRejectedBuddyId,
 			activityId,
-			...req.body
+			
 		});
 		res.send(userBuddyActivity);
 	} catch (error) {
