@@ -84,6 +84,21 @@ const GetUserRejectedBuddiesByBuddyId = async (req, res) => {
 		throw error;
 	}
 };
+const GetAllUserRejections = async(req, res)=>{
+	try{
+		const userId = parseInt(req.params.user_id);
+		const allUserRejections= await db.sequelize.query(
+			`SELECT * FROM "user_rejected_buddies" WHERE "userId" = ${userId} OR "rejectedBuddyId" =${userId}`,
+			{type:sequelize.QueryTypes.SELECT}
+		
+			)
+		res.send(allUserRejections)
+	}
+	catch(error){
+		throw error
+	}
+	
+}
 
 const CreateUserRejectedBuddy = async (req, res) => {
 	try {
@@ -135,5 +150,6 @@ module.exports = {
 	GetUserRejectedBuddiesByBuddyId,
 	CreateUserRejectedBuddy,
 	UpdateUserRejectedBuddyById,
-	DeleteUserRejectedBuddyById
+	DeleteUserRejectedBuddyById,
+	GetAllUserRejections
 };

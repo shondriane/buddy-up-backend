@@ -9,6 +9,7 @@ Router.get(
 	'/rejected-buddy/:rejected_buddy_id',
 	controller.GetUserRejectedBuddiesByBuddyId
 );
+Router.get('/all/user/:user_id', controller.GetAllUserRejections);
 Router.post(
 	'/user/:user_id/rejected-buddy/:rejected_buddy_id',
 	controller.CreateUserRejectedBuddy

@@ -85,7 +85,7 @@ const CreateUserRejectedBuddyActivity = async (req, res) => {
 		const userBuddyActivity = await UserRejectedBuddyActivity.create({
 			userRejectedBuddyId,
 			activityId,
-			...req.body
+			
 		});
 		res.send(userBuddyActivity);
 	} catch (error) {
