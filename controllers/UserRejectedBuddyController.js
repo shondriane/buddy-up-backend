@@ -1,3 +1,4 @@
+const db = require('../models');
 const { User, UserRejectedBuddy } = require('../models');
 
 const GetAllUserNotBuddyFollowers = async (req, res) => {
@@ -83,6 +84,7 @@ const GetUserRejectedBuddiesByBuddyId = async (req, res) => {
 		throw error;
 	}
 };
+
 
 const CreateUserRejectedBuddy = async (req, res) => {
 	try {
