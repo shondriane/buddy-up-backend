@@ -16,11 +16,11 @@ module.exports = {
     const fakePassword = await hashPassword('hello')
     const userList = [
       {
-        firstName: 'James',
+        firstName: 'Jay',
         lastName: 'Smith',
         username: 'CoolSmith',
         passwordDigest: fakePassword,
-        email: 'james@smith.com',
+        email: 'jay@smith.com',
         phoneNumber: '(145) 234- 2385',
         age: 32,
         profilePicture:
