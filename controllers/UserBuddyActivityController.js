@@ -1,4 +1,5 @@
-const { Activity, UserBuddy, UserBuddyActivity } = require('../models');
+const { Activity, UserBuddy, UserBuddyActivity,sequelize } = require('../models');
+const db = require('../models/index')
 
 const GetAllUserBuddyActivities = async (req, res) => {
 	try {
@@ -67,6 +68,33 @@ const GetUserBuddyActivitiesByActivityId = async (req, res) => {
 	}
 };
 
+const GetRawUserRejectedBuddyActivitiesByActivityId = async(req,res)=>{
+	try{
+		const activityId = parseInt(req.params.activity_id);
+		const userRejectedBuddyActivitiesByActivityId = await db.sequelize.query(`
+		SELECT * FROM "user_rejected_buddy_activities" WHERE "activityId"=${activityId}
+		`,
+			{ type: sequelize.QueryTypes.SELECT }
+		)
+		res.send(userRejectedBuddyActivitiesByActivityId)
+	}catch(error){
+		throw error
+	}
+}
+
+const GetRawUserBuddyActivitiesByActivityId = async(req,res)=>{
+	try{
+		const activityId = parseInt(req.params.activity_id);
+		const userBuddyActivitiesByActivityId = await db.sequelize.query(`
+		SELECT * FROM "user_buddy_activities" WHERE "activityId"=${activityId}
+		`,{ type: sequelize.QueryTypes.SELECT }
+		)
+		res.send(userBuddyActivitiesByActivityId)
+	}catch(error){
+		throw error
+	}
+}
+
 const CreateUserBuddyActivity = async (req, res) => {
 	try {
 		const userBuddyId = parseInt(req.params.user_buddy_id);
@@ -115,6 +143,7 @@ module.exports = {
 	GetAllUserBuddyActivitiesById,
 	GetUserBuddyActivitiesByUserBuddyId,
 	GetUserBuddyActivitiesByActivityId,
+	GetRawUserBuddyActivitiesByActivityId,
 	CreateUserBuddyActivity,
 	UpdateUserBuddyActivityById,
 	DeleteUserBuddyActivityById

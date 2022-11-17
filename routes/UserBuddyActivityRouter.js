@@ -14,6 +14,7 @@ Router.get(
 	'/activity/:activity_id',
 	controller.GetUserBuddyActivitiesByActivityId
 );
+Router.get('/raw/activity/:activity_id',controller.GetRawUserBuddyActivitiesByActivityId)
 Router.post(
 	'/user-buddy/:user_buddy_id/activity/:activity_id',
 	controller.CreateUserBuddyActivity

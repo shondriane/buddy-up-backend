@@ -1,5 +1,5 @@
-const { User, UserBuddy } = require('../models');
-
+const { User, UserBuddy,sequelize } = require('../models');
+const db = require('../models/index')
 const GetAllUserBuddyFollowers = async (req, res) => {
 	try {
 		const userBuddyFollowers = await User.findAll({
@@ -84,6 +84,35 @@ const GetUserBuddiesByBuddyId = async (req, res) => {
 	}
 };
 
+
+const GetAllUserBuddies = async(req, res)=>{
+	try{
+		const userId = parseInt(req.params.user_id);
+		const getAllUserBuddies= await db.sequelize.query(
+			`SELECT * FROM "user_buddies" WHERE "userId" = ${userId} OR "buddyId" =${userId}`,
+			{type:sequelize.QueryTypes.SELECT}
+		
+			)
+		res.send(getAllUserBuddies)
+	}
+	catch(error){
+		throw error
+	}
+	
+}
+const CreateUserApprovedBuddy = async (req, res) => {
+	try {
+		const userId = parseInt(req.params.user_id);
+		const buddyId = parseInt(req.params.buddy_id);
+		const userApprovedBuddy = await db.sequelize.query(
+			`INSERT INTO "user_buddies" ("userId","buddyId","createdAt","updatedAt") VALUES (${userId},${buddyId},current_timestamp,current_timestamp) RETURNING "userId","buddyId","createdAt","updatedAt","id";`,
+			{ type: sequelize.QueryTypes.INSERT }
+		);
+		res.send(userApprovedBuddy);
+	} catch (error) {
+		throw error;
+	}
+};
 const CreateUserBuddy = async (req, res) => {
 	try {
 		const userId = parseInt(req.params.user_id);
@@ -128,6 +157,8 @@ module.exports = {
 	GetUserBuddyById,
 	GetUserBuddiesByUserId,
 	GetUserBuddiesByBuddyId,
+	GetAllUserBuddies,
+	CreateUserApprovedBuddy,
 	CreateUserBuddy,
 	UpdateUserBuddyById,
 	DeleteUserBuddyById
