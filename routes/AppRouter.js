@@ -7,7 +7,8 @@ const UserBuddyRouter = require('./UserBuddyRouter');
 const UserCategoryRouter = require('./UserCategoryRouter');
 const AuthRouter = require('./AuthRouter');
 const UserActivityRouter = require('./UserActivityRouter');
-const UserRejectedBuddyRouter = require ('./UserRejectedBuddyRouter');
+const UserRejectedBuddyRouter = require('./UserRejectedBuddyRouter');
+const UserRejectedBuddyActivityRouter = require('./UserRejectedBuddyActivityRouter');
 
 Router.use('/users', UserRouter);
 Router.use('/activities', ActivityRouter);
@@ -17,6 +18,7 @@ Router.use('/user-buddies', UserBuddyRouter);
 Router.use('/user-categories', UserCategoryRouter);
 Router.use('/user-activities', UserActivityRouter);
 Router.use('/auth', AuthRouter);
-Router.use('/next', UserRejectedBuddyRouter)
+Router.use('/next-buddies', UserRejectedBuddyRouter);
+Router.use('/next-buddy-activities', UserRejectedBuddyActivityRouter);
 
 module.exports = Router;
