@@ -1,4 +1,5 @@
-const { User, UserRejectedBuddy } = require('../models');
+const { User, UserRejectedBuddy, sequelize } = require('../models');
+const db = require('../models/index');
 
 const GetAllUserNotBuddyFollowers = async (req, res) => {
 	try {
@@ -88,11 +89,15 @@ const CreateUserRejectedBuddy = async (req, res) => {
 	try {
 		const userId = parseInt(req.params.user_id);
 		const rejectedBuddyId = parseInt(req.params.rejected_buddy_id);
-		const userRejectedBuddy = await UserRejectedBuddy.create({
-			userId,
-			rejectedBuddyId,
-			...req.body
-		});
+		// const userRejectedBuddy = await UserRejectedBuddy.create({
+		// 	userId,
+		// 	rejectedBuddyId,
+		// 	...req.body
+		// });
+		const userRejectedBuddy = await db.sequelize.query(
+			`INSERT INTO "user_rejected_buddies" ("userId","rejectedBuddyId","createdAt","updatedAt") VALUES (${userId},${rejectedBuddyId},current_timestamp,current_timestamp) RETURNING "userId","rejectedBuddyId","createdAt","updatedAt","id";`,
+			{ type: sequelize.QueryTypes.INSERT }
+		);
 		res.send(userRejectedBuddy);
 	} catch (error) {
 		throw error;
