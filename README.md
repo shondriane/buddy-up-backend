@@ -49,5 +49,5 @@ The project itself was deployed and can be [viewed here](https://buddy-match-up.
 
 ### **_Future Features_**
 
---- send messages to buddies within the app
----  video chat within the app
+- Send messages to buddies within the app
+-  Video chat within the app
