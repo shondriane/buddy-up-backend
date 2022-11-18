@@ -6,15 +6,15 @@
 
 ### Kalen Luciano: [Github](https://github.com/kalenluciano) | [Linkedin](https://www.linkedin.com/in/kalenluciano/)
 
-### Aekangi Patel: [Github](https://github.com/Aekangi) | [Linkedin](https://www.linkedin.com/in/aekangipatel/)
-
 ### Shondriane Mesa-Wise: [Github](https://github.com/shondriane) | [LinkedIn](https://www.linkedin.com/in/shondriane-mesa-wise/)
+
+### Aekangi Patel: [Github](https://github.com/Aekangi) | [Linkedin](https://www.linkedin.com/in/aekangipatel/)
 
 ---
 
 ### **_Description_**
 
-BuddyUp allows you to select an activity and match with a buddy of your choice.
+BuddyUp was created so people can do activities and go to events with others who have similiar interest but don't want to go alone.
 
 ---
 
@@ -25,9 +25,9 @@ BuddyUp allows you to select an activity and match with a buddy of your choice.
 3. Run `npm run setup`
 4. Run `npm run dev`
 
-A trello board used to keep track of development progress can be [viewed here](https://trello.com/b/y27ScqGm/buddy-up).
+A trello board used to keep track of development progress can be [viewed here](https://trello.com/b/y27ScqGm/buddy-up)
 
-The project itself was deployed and can be [viewed here]().
+The project itself was deployed and can be [viewed here](https://buddy-match-up.herokuapp.com)
 
 ---
 
@@ -44,8 +44,8 @@ The project itself was deployed and can be [viewed here]().
 
 ---
 
-### **_Screenshots_**
 
----
+### **_Future Features_**
 
-### **_Credits_**
+--- send messages to buddies within the app
+--  video chat within the app
