@@ -39,6 +39,8 @@ The project itself was deployed and can be [viewed here](https://buddy-match-up.
 -   Node.js
 -   JavaScript
 
+---
+
 ### **_Entity Hierarchy Diagram:_**
 ![Entity Relationship Diagram](./assets/buddy-up-ERD.drawio.png)
 
