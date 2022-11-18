@@ -66,7 +66,7 @@ module.exports = {
 			},
 			{
 				name: 'COMEDY',
-				image: 'https://www.proctors.org/wp-content/uploads/sites/4/nggallery/pretty-much-the-best-comedy-show/L1003563.jpg',
+				image: 'https://bocablackbox.showare.com/uplimage/ComedyShow_PromoPic.jpg',
 				createdAt: new Date(),
 				updatedAt: new Date()
 			},
@@ -90,7 +90,7 @@ module.exports = {
 			},
 			{
 				name: 'RELIGIOUS',
-				image: 'https://rgyan.com/blogs/wp-content/uploads/2018/05/Hemis-Festival.jpg',
+				image: 'https://media.istockphoto.com/id/1265115237/photo/women-raise-their-hands-to-ask-for-blessing-from-god.jpg?s=612x612&w=0&k=20&c=WOXroeLf4eUlJG9UJxfsV_zEkxGzOuBd2_R1KhN5bIU=',
 				createdAt: new Date(),
 				updatedAt: new Date()
 			},
