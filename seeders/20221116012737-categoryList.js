@@ -42,13 +42,13 @@ module.exports = {
 			},
 			{
 				name: 'THEATER',
-				image: 'https://live.staticflickr.com/8638/16728668742_cd472db381_b.jpg',
+				image: 'https://res.cloudinary.com/dwzhqvxaz/w_767,f_auto,q_auto,fl_progressive/v1638462593/Venues/Oxford/Oxford_Internal3_1920x1080.jpg',
 				createdAt: new Date(),
 				updatedAt: new Date()
 			},
 			{
 				name: 'POPUP',
-				image: 'https://durhamcentralpark.org/content/uploads/northhillspopupfinals-5.jpg',
+				image: 'https://i.insider.com/4dbaf672ccd1d55e28030000?width=700&format=jpeg&auto=webp',
 				createdAt: new Date(),
 				updatedAt: new Date()
 			},
